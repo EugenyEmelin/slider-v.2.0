@@ -1,0 +1,135 @@
+html, body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	overflow-x: hidden;
+}
+$width-L: 70%;
+$height-L: 56.25vh;
+$nav-width-L: 8%;
+
+$width-S: 100%;
+$height-S: 55vh;
+$nav-width-S: 12%;
+
+$nav-color: rgba(230,230,250, .1);
+$nav-color-hover: rgba(209,209,227, .3);
+
+.slider {
+	margin: 0 auto;
+	position: relative;
+	width: $width-L;
+	margin-top: 30px;
+	height: 0;
+	padding-bottom: $height-L;
+	user-select: none;
+	background-color: #c1c1c1;
+	overflow: hidden;
+}
+.hidden {
+	display: none;
+}
+.slide-img {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+	img {
+		width: 100%;
+		height: auto;
+
+	}
+}
+.centered {
+	position: absolute;
+	top: -50%;
+	left: -50%;
+	right: -50%;
+	bottom: -50%;
+	margin: auto;
+}
+.prev, .next {
+	width: $nav-width-L;
+	height: inherit;
+	position: absolute;
+	top: 0;
+	background-color: $nav-color;
+	z-index: 99;
+	transition: .3s;
+	cursor: pointer;
+	text-align: center;
+	&:hover {
+		transition: .3s;
+		background-color: $nav-color-hover;
+	}
+	span {
+		position: absolute;
+		width: 0;
+		height: 0;
+		border: solid 15px;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+}
+.prev {
+	left: 0;
+	span {
+		border-color: transparent #fff transparent transparent;
+		right: 35%;
+	}
+}
+.next {
+	right: 0;
+	span {
+		border-color: transparent transparent transparent #fff;
+		left: 35%; 
+	}
+}
+.slider-navigation {
+	position: absolute;
+	width: 100%;
+	bottom: 8%;
+	height: 12px;
+	text-align: center;
+	z-index: 99;
+	cursor: default;
+}
+.dots {
+	display: inline-block;
+	position: relative;
+	top: -5px;
+	width: 12px;
+	height: 12px;
+	margin: 0 5px;
+	border-radius: 100%;
+	background-color: rgba(0, 0, 0, 0.7);
+	transition: .4s;
+	box-shadow: 0 0 5px gray;
+	cursor: pointer;
+	&:hover {
+		background-color: #eee;
+	}
+}
+
+[id^='input-']:checked + .slide-img {
+	z-index: 9;
+	animation: sliderScroll 1s ease-in-out;
+}
+@keyframes sliderScroll {
+	0% { opacity: .3;}
+	100% { opacity: 1;}
+}
+#input-1:checked ~ .slider-navigation #dot-1,
+#input-2:checked ~ .slider-navigation #dot-2,
+#input-3:checked ~ .slider-navigation #dot-3,
+#input-4:checked ~ .slider-navigation #dot-4,
+#input-5:checked ~ .slider-navigation #dot-5,
+#input-6:checked ~ .slider-navigation #dot-6,
+#input-7:checked ~ .slider-navigation #dot-7,
+#input-8:checked ~ .slider-navigation #dot-8,
+#input-9:checked ~ .slider-navigation #dot-9,
+#input-10:checked ~ .slider-navigation #dot-10,
+#input-11:checked ~ .slider-navigation #dot-11,
+#input-12:checked ~ .slider-navigation #dot-12 {
+	background-color: #eee;
+}

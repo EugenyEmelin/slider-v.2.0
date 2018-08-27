@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Slider v.2</title>
+	<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+	<div class="slider">
+		<input type="radio" class="hidden" id="input-1" name="images" checked>
+		<div class="slide-img" id="img-1">
+			<img src="img/bobber_xv1600_mototsikl_stil_bajk_101018_1280x720.jpg" class="centered">
+			<label for="input-6" class="prev"><span></span></label>
+			<label for="input-2" class="next"><span></span></label>
+		</div>
+		<input type="radio" class="hidden" id="input-2" name="images">
+		<div class="slide-img" id="img-2">
+			<img src="img/chevrolet_camaro_chevrolet_avto_vid_speredi_chb_96517_1280x960.jpg" class="centered">
+			<label for="input-1" class="prev"><span></span></label>
+			<label for="input-3" class="next"><span></span></label>
+		</div>
+		<input type="radio" class="hidden" id="input-3" name="images">
+		<div class="slide-img" id="img-3">
+			<img src="img/dozhd_avtobus_lodka_san-francisko_kaliforniya_ssha_54876_1280x800.jpg" class="centered">
+			<label for="input-2" class="prev"><span></span></label>
+			<label for="input-4" class="next"><span></span></label>
+		</div>
+		<input type="radio" class="hidden" id="input-4" name="images">
+		<div class="slide-img" id="img-4">
+			<img src="img/harley_davidson_bajk_mototsikl_stil_bajkery_98703_1280x720.jpg" class="centered">
+			<label for="input-3" class="prev"><span></span></label>
+			<label for="input-5" class="next"><span></span></label>
+		</div>
+		<input type="radio" class="hidden" id="input-5" name="images">
+		<div class="slide-img" id="img-5">
+			<img src="img/koenigsegg_agera_rs_vid_sboku_osen_derevya_107373_1600x900.jpg" class="centered">
+			<label for="input-4" class="prev"><span></span></label>
+			<label for="input-6" class="next"><span></span></label>
+		</div>
+		<input type="radio" class="hidden" id="input-6" name="images">
+		<div class="slide-img" id="img-6">
+			<img src="img/malina_smorodina_ezhevika_bidony_listya_96879_1600x900.jpg" class="centered">
+			<label for="input-5" class="prev"><span></span></label>
+			<label for="input-1" class="next"><span></span></label>
+		</div>
+		<div class="slider-navigation">
+			<label for="input-1" class="dots" id="dot-1"></label>
+			<label for="input-2" class="dots" id="dot-2"></label>
+			<label for="input-3" class="dots" id="dot-3"></label>
+			<label for="input-4" class="dots" id="dot-4"></label>
+			<label for="input-5" class="dots" id="dot-5"></label>
+			<label for="input-6" class="dots" id="dot-6"></label>
+		</div>
+	</div>
+	<script>
+	{
+		let dots = document.querySelectorAll('.dots')
+		let start = 1
+		let end = dots.length
+		setInterval(() => {
+			dots[start].click()
+			start++
+			if (start === end) start = 0
+		}, 5000)
+	}
+	
+
+	</script>
+</body>
+</html>
