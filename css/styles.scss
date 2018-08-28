@@ -23,7 +23,7 @@ $nav-color-hover: rgba(209,209,227, .3);
 	height: 0;
 	padding-bottom: $height-L;
 	user-select: none;
-	background-color: #1c1c1c;
+	background-color: #363636;
 	overflow: hidden;
 }
 .hidden {
@@ -112,7 +112,7 @@ $nav-color-hover: rgba(209,209,227, .3);
 
 [id^='input-']:checked + .slide-img {
 	z-index: 9;
-	animation: sliderScroll 1s ease-in-out;
+	animation: sliderScroll .8s ease-in-out;
 }
 @keyframes sliderScroll {
 	0% { opacity: .3;}
